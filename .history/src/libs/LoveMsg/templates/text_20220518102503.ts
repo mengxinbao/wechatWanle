@@ -12,7 +12,6 @@ export const textTemplate = (data: TextTemplateProps) => {
   const { caiHongpi, sayLove, songLyrics, oneMagazines, netEaseCloud, oneWord, dayEnglish } = data
   // 今日、恋爱天数
   // const today = `${date.replace('-', '年').replace('-', '月')}日`
-  let date = new Date()
   const dateLength = dayjs(date).diff(CONFIG.start_stamp, 'day')
 
   let text = '早安呀，小甜甜~\n'

@@ -4,20 +4,12 @@
  */
 
 import dayjs, { weekToday } from '../../../utils/dayjs'
-import { getConfig } from '../../../utils/getConfig'
-
-const CONFIG = getConfig().loveMsg
 
 export const textTemplate = (data: TextTemplateProps) => {
   const { caiHongpi, sayLove, songLyrics, oneMagazines, netEaseCloud, oneWord, dayEnglish } = data
-  // 今日、恋爱天数
-  // const today = `${date.replace('-', '年').replace('-', '月')}日`
-  let date = new Date()
-  const dateLength = dayjs(date).diff(CONFIG.start_stamp, 'day')
 
   let text = '早安呀，小甜甜~\n'
 
-  text += `这是我们相识的第 ${dateLength} 天\n`
   // 工作日/休息日，需要排除节假日
   const week = weekToday()
   if (['星期六', '星期日'].includes(week)) {
