@@ -108,7 +108,7 @@
 import API from '../../api/loveMsg'
 import { wxNotify } from '../WxNotify'
 
-export const goodEvening = async () => {
+export const goodAfternoon = async () => {
   const res = await API.getJoke()
 
   let text = '美好的一天结束喽，:\n 给小甜甜的今日份睡前故事来喽：🌑🌒🌓🌔🌕🌝😛\n'
