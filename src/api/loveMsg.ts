@@ -91,6 +91,12 @@ class API {
     const res = await getTian<StorybookProps[]>({ url: LoveMsgURL.storybook })
     return res ?.[0]
   }
+   // 晚安
+   async getWanAnbook() {
+    const res = await getTian<WanAnProps[]>({ url: LoveMsgURL.WanAn })
+    return res ?.[0]
+  }
+
 
   // 网易云热评
   async getNetEaseCloud() {
