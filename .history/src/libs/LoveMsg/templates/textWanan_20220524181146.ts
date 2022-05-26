@@ -9,13 +9,15 @@ import { getConfig } from '../../../utils/getConfig'
 const CONFIG = getConfig().loveMsg
 
 export const textTemplate = (data: TextTemplateProps) => {
-  const { caiHongpi, sayWanan, sayLove, songLyrics, oneMagazines, netEaseCloud, oneWord, dayEnglish } = data
+  const { caiHongpi, sayWanan,sayLove, songLyrics, oneMagazines, netEaseCloud, oneWord, dayEnglish } = data
   // 今日、恋爱天数
   // const today = `${date.replace('-', '年').replace('-', '月')}日`
   let date = dayjs()
   const dateLength = dayjs(date).diff(CONFIG.start_stamp, 'day')
 
   let text = '晚安呀，小甜甜~\n'
+
+  text += `这是我们相识的第 ${dateLength} 天\n`
   // 工作日/休息日，需要排除节假日
   const week = weekToday()
   if (['星期六', '星期五'].includes(week)) {
@@ -41,10 +43,10 @@ ${sayWanan.content}\n`
   }
 
   //诗句
-  if (songLyrics) {
-    text += `
+    if (songLyrics) {
+      text += `
   『${songLyrics.source}』${songLyrics.content}\n`
-  }
+    }
 
   if (oneMagazines) {
     text += `
@@ -57,10 +59,10 @@ ${sayWanan.content}\n`
   }
 
   //添加一句一言
-  if (oneWord) {
-    text += `
+    if (oneWord) {
+      text += `
   『一言』${oneWord.hitokoto}\n`
-  }
+    }
 
   // 每日英语
   if (dayEnglish) {
