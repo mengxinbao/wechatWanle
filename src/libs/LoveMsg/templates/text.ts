@@ -19,17 +19,17 @@ export const textTemplate = (data: TextTemplateProps) => {
 
   text += `这是我们相识的第 ${dateLength} 天\n`
   // 工作日/休息日，需要排除节假日
-  const week = weekToday()
-  if (['星期六', '星期日'].includes(week)) {
-    text += `
-如果我的小甜甜还没起床呀！碎逼娃娃就等着小甜甜起床给我说早安呦🤣
-嗯哼~，既然今天是${week}，就让你再睡会懒觉~下次可不能啦~😝\n`
-  }
-  else {
-    text += `
-如果我小甜甜已经起床啦！碎逼娃娃向你说早安呦~，记得吃早饭呀😆\n
-嗯哼哼~今天可是${week}哦，上班别迟到了哦~`
-  }
+  //   const week = weekToday()
+  //   if (['星期六', '星期日'].includes(week)) {
+  //     text += `
+  // 如果我的小甜甜还没起床呀！碎逼娃娃就等着小甜甜起床给我说早安呦🤣
+  // 嗯哼~，既然今天是${week}，就让你再睡会懒觉~下次可不能啦~😝\n`
+  //   }
+  //   else {
+  //     text += `
+  // 如果我小甜甜已经起床啦！碎逼娃娃向你说早安呦~，记得吃早饭呀😆\n
+  // 嗯哼哼~今天可是${week}哦，上班别迟到了哦~`
+  //   }
 
   // 添加笑话
   if (caiHongpi) {
@@ -61,10 +61,10 @@ ${sayLove.content}\n`
   }
 
   // 添加一句一言
-  //   if (oneWord) {
-  //     text += `
-  // 『一言』${oneWord.hitokoto}\n`
-  //   }
+  if (oneWord) {
+    text += `
+  『一言』${oneWord.hitokoto}\n`
+  }
 
   // 每日英语
   if (dayEnglish) {
